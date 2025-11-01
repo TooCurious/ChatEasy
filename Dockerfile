@@ -8,7 +8,7 @@ COPY pyproject.toml /app/pyproject.toml
 
 COPY uv.lock /app/uv.lock 
 
-COPY main.py /app/main.
+COPY main.py /app/main.py
 
 COPY static /app/static
 
