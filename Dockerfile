@@ -10,7 +10,7 @@ COPY uv.lock /app/uv.lock
 
 COPY main.py /app/main.
 
-COPY static /app/
+COPY static /app/static
 
 COPY templates /app/templates
  
