@@ -42,7 +42,7 @@ docker ps -a
 ```
   - Откройте в браузере UI dify localhost/app, создайте агента и подключите к нему MCP
 4. **Встройте сервис Ollama в dify**
-  - Для этого добавте содержимое файлов ollama/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
+  - Для этого добавте содержимое файла ollama/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
   - сгенерируйте новый docker-compose.yaml запустив скрипт
 ```bash
 ./generate_docker_compose
