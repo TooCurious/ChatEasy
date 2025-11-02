@@ -20,4 +20,24 @@
 
 ```bash
 git clone https://github.com/your-username/ChatEasy.git
-cd ChatEasy
+```
+2. **Клонируйте репозиторий Dify**
+```bash
+git clone https://github.com/langgenius/dify.git
+```
+3. **Встроить сервисы APP и MCP в dify**
+   - Настройте Docker Compose так, чтобы сервисы `app` и `mcp` были в той же сети, что и Dify
+   - Для этого добавте содержимое файлов mcp/docker-compose.yaml, app/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
+   - сгенерируйте новый docker-compose.yaml запустив скрипт
+```bash
+./generate_docker_compose
+```
+   - Выполните
+```bash
+docker-compose up -d
+```
+   - Убедитесь, что все сервисы запустились
+```bash
+docker ps -a
+```
+  - откройте ui dify и создайте агента, подключите к нему MCP
