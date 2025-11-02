@@ -1,4 +1,4 @@
-// Простая замена nanoid
+
 function generateId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 }
@@ -52,7 +52,7 @@ formEl.addEventListener("submit", (e) => {
   autosize();
   render(messages, true);
 
-  // Отправляем запрос на бэкенд
+  // Sending a request to the backend
   requestAssistantReply(me);
 });
 
@@ -159,7 +159,7 @@ async function requestAssistantReply(userMessage) {
     try {
       while (true) {
         const { done, value } = await reader.read();
-        if (done || firstLineReceived) break; // 🔥 Останавливаем после первой строки
+        if (done || firstLineReceived) break;
 
         buffer += decoder.decode(value, { stream: true });
 
@@ -181,8 +181,8 @@ async function requestAssistantReply(userMessage) {
                 saveMessages(messages);
                 render(messages, true);
 
-                firstLineReceived = true; // 🔥 Устанавливаем флаг
-                break; // Выходим из цикла строк
+                firstLineReceived = true; 
+                break;
               
             } catch (e) {
               console.error('Error parsing SSE JSON:', e, 'Line:', buffer);
@@ -191,7 +191,7 @@ async function requestAssistantReply(userMessage) {
               return;
             }
         
-        if (firstLineReceived) break; // 🔥 Останавливаем, если уже получили первую строку
+        if (firstLineReceived) break;
       }
     } finally {
       reader.releaseLock();
@@ -203,7 +203,7 @@ async function requestAssistantReply(userMessage) {
     const errorReply = {
       id: generateId(),
       role: "assistant",
-      text: `❌ Ошибка: не удалось получить ответ от сервера. (${error.message})`,
+      text: `Error: Failed to receive a response from the server. (${error.message})`,
       time: Date.now()
     };
     messages.push(errorReply);
