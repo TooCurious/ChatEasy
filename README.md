@@ -40,7 +40,7 @@ docker-compose up -d
 ```bash
 docker ps -a
 ```
-  - Откройте в браузере UI dify localhost/app, создайте агента и подключите к нему MCP
+  - Откройте в браузере UI dify localhost/app, создайте агента, подключите к нему генеративную LLM от OpenRouter и MCP
 4. **Встройте сервис Ollama в dify**
   - Для этого добавте содержимое файла ollama/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
   - сгенерируйте новый docker-compose.yaml запустив скрипт
