@@ -20,12 +20,23 @@
 
 ```bash
 git clone https://github.com/your-username/ChatEasy.git
+
+cd ChatEasy/app
+cp .env.example .env
 ```
+
 2. **Клонируйте репозиторий Dify**
+   
 ```bash
 git clone https://github.com/langgenius/dify.git
+
+cd dify
+cd docker
+cp .env.example .env
 ```
+
 3. **Встройте сервисы APP и MCP в Dify**
+   
    - Настройте Docker Compose так, чтобы сервисы `app` и `mcp` были в той же сети, что и Dify
    - Для этого добавте содержимое файлов mcp/docker-compose.yaml, app/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
    - Cгенерируйте новый docker-compose.yaml запустив скрипт
@@ -41,7 +52,9 @@ docker-compose up -d
 docker ps -a
 ```
   - Откройте в браузере UI dify localhost/app, создайте агента, подключите к нему генеративную LLM от OpenRouter и MCP
+  - 
 4. **Встройте сервис Ollama в Dify**
+    
   - Для этого добавте содержимое файла ollama/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
   - сгенерируйте новый docker-compose.yaml запустив скрипт
 ```bash
