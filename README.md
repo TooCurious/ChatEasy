@@ -25,7 +25,7 @@ git clone https://github.com/your-username/ChatEasy.git
 ```bash
 git clone https://github.com/langgenius/dify.git
 ```
-3. **Встроить сервисы APP и MCP в dify**
+3. **Встройте сервисы APP и MCP в dify**
    - Настройте Docker Compose так, чтобы сервисы `app` и `mcp` были в той же сети, что и Dify
    - Для этого добавте содержимое файлов mcp/docker-compose.yaml, app/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
    - Cгенерируйте новый docker-compose.yaml запустив скрипт
@@ -41,7 +41,7 @@ docker-compose up -d
 docker ps -a
 ```
   - Откройте в браузере UI dify localhost/app, создайте агента и подключите к нему MCP
-4. **Встроить сервисы Ollama в dify**
+4. **Встройте сервис Ollama в dify**
   - Для этого добавте содержимое файлов ollama/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
   - сгенерируйте новый docker-compose.yaml запустив скрипт
 ```bash
@@ -49,7 +49,7 @@ docker ps -a
 ```
    - Выполните
 ```bash
-docker-compose up -d
+docker-compose up --build -d
 ```
    - Убедитесь, что все сервисы запустились
 ```bash
