@@ -1,0 +1,8 @@
+# ollama service
+ollama:
+    image: ollama/ollama:0.12.8
+    volumes:
+      - ./ollama:/root/.ollama
+    environment:
+      OLLAMA_KEEP_ALIVE: -1
+    restart: unless-stopped

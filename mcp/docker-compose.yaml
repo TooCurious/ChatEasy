@@ -1,0 +1,9 @@
+ # mcp-server service
+  mcp:
+    build:
+      context: # Specify the path to mcp/Dockerfile
+      dockerfile: Dockerfile
+    container_name: order-status-mcp
+    networks:
+      - default
+    restart: unless-stopped

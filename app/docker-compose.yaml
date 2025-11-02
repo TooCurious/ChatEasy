@@ -1,0 +1,10 @@
+# fastapi service
+ fastapi:
+    build:
+      context: # Specify the path to app/Dockerfile
+      dockerfile: Dockerfile
+    container_name: chat-fastapi
+    env_file: # Specify the path to app/.env
+    ports:
+      - "8800:8000"
+    restart: unless-stopped
