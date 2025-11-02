@@ -28,7 +28,7 @@ git clone https://github.com/langgenius/dify.git
 3. **Встроить сервисы APP и MCP в dify**
    - Настройте Docker Compose так, чтобы сервисы `app` и `mcp` были в той же сети, что и Dify
    - Для этого добавте содержимое файлов mcp/docker-compose.yaml, app/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
-   - сгенерируйте новый docker-compose.yaml запустив скрипт
+   - Cгенерируйте новый docker-compose.yaml запустив скрипт
 ```bash
 ./generate_docker_compose
 ```
@@ -40,4 +40,24 @@ docker-compose up -d
 ```bash
 docker ps -a
 ```
-  - откройте ui dify и создайте агента, подключите к нему MCP
+  - откройте в браузере UI dify, создайте агента и подключите к нему MCP
+4. **Встроить сервисы Ollama в dify**
+  - Для этого добавте содержимое файлов ollama/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
+  - сгенерируйте новый docker-compose.yaml запустив скрипт
+```bash
+./generate_docker_compose
+```
+   - Выполните
+```bash
+docker-compose up -d
+```
+   - Убедитесь, что все сервисы запустились
+```bash
+docker ps -a
+```
+  - Загрузите модель
+```bash
+docker compose exec ollama ollama pull nomic-embed-text
+```
+  - откройте в браузере UI dify, добавьте embeded-модель, создайте базу знаний и подключите RAG к агенту
+     
