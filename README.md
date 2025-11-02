@@ -40,7 +40,7 @@ docker-compose up -d
 ```bash
 docker ps -a
 ```
-  - откройте в браузере UI dify, создайте агента и подключите к нему MCP
+  - Откройте в браузере UI dify localhost/app, создайте агента и подключите к нему MCP
 4. **Встроить сервисы Ollama в dify**
   - Для этого добавте содержимое файлов ollama/docker-compose.yaml в файл dify/docker/docker-compose-template.yaml
   - сгенерируйте новый docker-compose.yaml запустив скрипт
@@ -59,5 +59,5 @@ docker ps -a
 ```bash
 docker compose exec ollama ollama pull nomic-embed-text
 ```
-  - откройте в браузере UI dify, добавьте embeded-модель, создайте базу знаний и подключите RAG к агенту
+  - Откройте в браузере UI dify, добавьте embeded-модель, создайте базу знаний и подключите RAG к агенту
      
