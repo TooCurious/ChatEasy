@@ -14,9 +14,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
-
-
-
 @app.post("/chat") 
 async def chat_stream(request: ChatRequest):
 
@@ -27,11 +24,9 @@ async def chat_stream(request: ChatRequest):
         media_type="text/event-stream"
     )
 
-
 @app.get("/chat", response_class=HTMLResponse)
 async def chat_page(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
-
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
