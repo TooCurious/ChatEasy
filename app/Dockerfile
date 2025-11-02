@@ -10,6 +10,10 @@ COPY uv.lock /app/uv.lock
 
 COPY main.py /app/main.py
 
+COPY config.py /app/config.py
+
+COPY chat /app/chat
+
 COPY static /app/static
 
 COPY templates /app/templates
